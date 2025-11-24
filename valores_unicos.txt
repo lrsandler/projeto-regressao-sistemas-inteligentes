@@ -1,0 +1,226 @@
+Valores únicos por coluna:
+Coluna: Débitos, Valores únicos: [ 1399  1018     0   862   446   891   761   751  1053  1055  1079   810
+  2386  1850   531  1249   583  1537  1288   915  1750   707  1077  1486
+  1091   650   382  1436  1194   503  1017  1104   639   629   919   781
+   640   777   779   934   769   645  2455  1185  1324   830  1187  1111
+   760   642  1604  1095   966   473  1138  1811   765   917  1156   687
+ 11714   836   394  1347  2866  1646   259   609   697   585   475   690
+   308  1823  1361  1273   924   584  2078   831  1172   893  1872  1885
+  1266   447  2148  1730   730   289   502   586   333  1325   247   879
+  1342  1327  1598  1514  1058   738  1935   481  1522  1282   456   900
+   798   988  1277   442  1051   790  1292  1047   528  1211  1493  1793
+   574   930  1998   271   706  1481  1677  1661  1286  1408  1090   595
+   880  1451  1267   993  1714   878   530   641   749   603   353   877
+  1236  1141   397   784  1024  1357  1301   770   922  1438   753   607
+  1363   638   490   565   517   833   489  1760   986  1841  1620  1360
+   474  1099   978  1624  1946  1268  1307   696   649   666  2151   551
+   800   971  1323  2377  1845  1083   694   463   419   345  1515  1505
+  2056  1203   729   460  1356   876   911  1190   780   448  2410  1848
+  1148   834  1275  1028  1197   724   890  1705   505   789  2959   518
+   461  1719  2858  3156  2225  2177  1968  1888  1308  2736  1103   557
+  2195   843  1664   723  4508   562   501  2018  1076  1202  3301   691
+  1440  1869   418  1820  1413   488  1304   363  2108   521  1659    87
+   431  1411  1528  3292  7058  1578   627   874  1996  1488  5679  1234
+   400   889  3268   875   949   441   742   425  2476  2971   614  1816
+  1375  1405  2297  1062  1113   420  2469   658  1951  2670  2578  1995
+  1032   994  1011  1296   155   494   426  1086   961  1511  2236  1829
+   764  1834  1054   617  1529  2266   637   626  1832  1016  2002  1756
+   746  1285  2690  1118  5332   980  1807   970  1228  1132  1768  1384
+  1080  1817  1452  1975  1368   702  1974  1781  1036   944   364  1345
+  1680  2209   741  1575   695  1317  1525   424   997  1473  1552  2819
+  2188  1668  3057   799  1502  2606   552  1694  1759  1110   399  1470
+  1174  5877  1474  1688   526   686  5908  1107  2070  1468  1246   556
+  1533  1917   732   692   579   421   362  3505  1855  2711  1586  3739
+   681  2278  1701   722  1482   928   827   832   527   604   173  1341
+   663  3329  1553   859   167   916  1195  1346   828  2082  1176  1108
+   975  1516  2269  1699  2073  1031  2364  1442  2715  1437  1030  1178
+  2067  1426  2908  1279   866  4283   279  2658  3015  2004]
+Coluna: Fabricante, Valores únicos: ['LEXUS' 'CHEVROLET' 'HONDA' 'FORD' 'HYUNDAI' 'TOYOTA' 'MERCEDES-BENZ'
+ 'OPEL' 'PORSCHE' 'BMW' 'JEEP' 'VOLKSWAGEN' 'AUDI' 'RENAULT' 'NISSAN'
+ 'SUBARU' 'DAEWOO' 'KIA' 'MITSUBISHI' 'SSANGYONG' 'MAZDA' 'GMC' 'FIAT'
+ 'INFINITI' 'ALFA ROMEO' 'SUZUKI' 'VAZ' 'GAZ' 'CITROEN' 'LAND ROVER'
+ 'MINI' 'DODGE' 'CHRYSLER' 'JAGUAR' 'ISUZU' 'ACURA' 'SKODA' 'LINCOLN'
+ 'DAIHATSU' 'BUICK' 'TESLA' 'CADILLAC' 'PEUGEOT' 'BENTLEY' 'VOLVO' nan
+ 'HAVAL' 'HUMMER' 'SCION' 'UAZ' 'MERCURY' 'ZAZ' 'ROVER' 'SEAT' 'LANCIA'
+ 'MOSKVICH' 'MASERATI' 'FERRARI' 'SAAB' 'LAMBORGHINI']
+Coluna: Modelo, Valores únicos: ['RX 450' 'Equinox' 'FIT' 'Escape' 'Santa FE' 'Prius' 'Sonata' 'RX 350'
+ 'E 350' 'Transit' 'Vectra' 'CHR' 'Elantra' 'RX 400' 'Camry' 'E 220'
+ 'Highlander' 'Vito' 'Cayenne' 'X5' 'Grand Cherokee' 'CHR Limited' 'H1'
+ 'Jetta' 'Tacoma' 'Prius C' 'Aqua' 'Escape Hybrid' 'Civic' 'Q7'
+ 'Megane 1.5CDI' 'E 300' 'Q5' 'C 180' 'GLA 250' 'Juke' '535' 'Cruze LT'
+ 'VOXY' 'A 160' 'Tucson' 'Vitz' 'Captiva' 'Mustang' 'ML 350' 'GX 470'
+ 'Yaris' 'Cr-v' 'Cruze' 'Orlando' 'GL 63 AMG' '520 Vanos' 'Forester'
+ 'Lacetti' '428 Sport Line' 'Patrol' 'E 320' 'Genesis' '911' 'Fusion'
+ 'GX 460' 'Sprinter' 'Focus SE' 'Picanto' '328' 'Explorer' 'E 500 AMG'
+ 'Lancer' 'Korando' 'Clio' '616' 'C 220' 'Serena' 'Maxima' 'RAV 4'
+ 'Pajero' 'Volt' 'TERRAIN' '208' 'Hr-v EX' '500' 'Legacy'
+ 'Elantra sport limited' 'Sienna' 'A 170' 'NX 300' 'Carnival grand' 'QX60'
+ 'Passat' 'E 240 E 240' '1000' '50' 'C 250' 'Vitz funkargo' '325' 'A6'
+ 'Delica' 'Golf' 'Camry Se' 'Patrol Y60' 'A7' 'I30' 'Altima' '147'
+ 'Grand Vitara' 'CT 200h' 'Panamera' 'Veloster' 'RAV 4 XLE Sport' 'Sienta'
+ 'CLS 550' 'Avalanche' 'Avalon LIMITED' 'Cerato K3' 'CX-7' 'Astra G' 'Ist'
+ 'Corolla' 'Rogue' 'MPV' '530' 'GS 350' 'Sharan' 'Tiida' 'C 300' 'Actyon'
+ 'Tundra' 'Elgrand' 'C 350' 'CLS 500' 'S 350' 'RAV 4 Le' 'Zafira'
+ 'Vectra b' nan 'CLK 320' 'Avalon' 'ML 250' '330' 'A7 Prestige'
+ 'Colt Lancer' 'Outlander' 'Camry SE' 'E 200' 'GLE 350' 'Malibu' 'Insight'
+ 'Stream' 'REXTON' 'I' 'GTI' 'Colt' 'Pajero Mini' 'C-MAX' '750'
+ 'RAV 4 s p o r t' 'E 250' 'Outback' 'GLC 300' 'Fusion Titanium' 'Jimny'
+ 'Aveo' 'X6' 'Aqua S' '1111' 'NX 200' 'Astra' '32214' 'Laguna' 'Shuttle'
+ 'C 240' '318' 'Land Cruiser Prado' '328 Xdrive' 'E 240' 'Twingo'
+ '535 M PAKET' 'S 500 long' '520' '525' 'A4 premium' 'Galaxy' 'Kizashi'
+ 'Golf 4' 'Element' 'C1' 'X-Trail' 'RIO' 'Discovery' 'Vento' 'C 200 2.0'
+ 'M6' 'ML 550 4.7' 'Corolla IM' 'CLK 240' 'Fiesta' 'Cooper' 'Combo'
+ 'Challenger' 'RX 300' 'A4' 'Optima' '320' 'RX 400 HYBRID' 'Corolla verso'
+ 'Pajero IO' '528 i' 'Insight EX' 'Fiesta 1.6' 'Focus' 'Teana' 'Matiz'
+ 'Mazda 3' 'Corsa' 'Scenic' 'Spark' 'March' 'Wrangler' 'HS 250h Hybrid'
+ 'Journey' 'Elantra SE' 'Rogue Sport' 'Auris' 'E 270' 'FJ Cruiser'
+ 'ES 350' 'Impala' 'SOUL' 'S 350 W2222' '500C Lounge' 'X-Terra'
+ 'Cruze ltz' 'X5 x5' 'Ipsum' 'Countryman' 'Corolla 04' 'A 190' 'SLK 230'
+ 'Rogue SL' 'Q3' 'Accent' 'Frontier' 'Stella' 'Hr-v' 'Prius 2014'
+ 'Dart Limited' '200' 'Accord' 'XF' 'Fusion TITANIUM' 'Freelander'
+ 'Compass' 'L 200' 'Transit Connect' 'XV' 'Aqua g soft leather sele'
+ 'Meriva' 'Prius V' 'Sorento' 'Passo' 'ES 300' 'Sportage' '320 DIESEL'
+ 'Rodeo' 'A5' 'Versa' 'FIT Sport' 'Carnival' 'Step Wagon Pada' 'Vectra B'
+ 'TLX' 'E 230' 'A3 PREMIUM' 'GL 320' 'Tourneo Connect' 'IS 250'
+ 'Cruze LTZ' '335' 'CLK 320 AMG' '730 3.0' 'S 550' '1300' 'RAM'
+ 'Sprinter 411' 'Sintra' 'E 500' 'X5 M' 'Camaro' 'CLS 350' 'Transit 350T'
+ '435' 'G 350' 'Outlander 2.0' 'Polo' 'Cherokee' 'Pathfinder' 'CLA 250'
+ 'Ist 1.5' '2107' 'Note' 'Harrier' 'Ceed' 'X6 M' 'G 65 AMG 63AMG'
+ 'Camry se' 'Kyron' 'Octavia' 'Sequoia' 'Mazda 3 SPORT' 'Range Rover'
+ 'IX35' 'Tiida 2008' 'Minica' 'Sentra' 'GL 550' 'Town Car' 'Airtrek'
+ 'Mirage' 'Yukon' '325 CI' 'Smart' 'Corolla LE' '428' 'Elantra limited'
+ 'Sprinter MAX' 'FIT SPORT' 'X5 3.5' 'Cooper S Cabrio R56' 'LS 460' 'Mx-5'
+ 'Crafter' 'A 140' 'Terios' '114' 'Cadenza' 'Sonata 2.0t'
+ 'Defender 90 Cabrio' 'E 280' 'Sonata S' 'GL 450' 'B 170' 'Cerato' 'Edge'
+ 'Astra 1600' 'Sonata blue edition' 'CLS 55 AMG' '320 M' 'C 200'
+ 'Sprinter VAN' 'Grandeur' 'IS 350' 'Civic EX' 'Fuga' 'Pajero Sport'
+ 'Viano' 'MKZ' '528' 'Cruze strocna' 'Countryman S' 'Tiida AXIS' 'CLK 200'
+ 'Swift' 'HS 250h' 'CT 200h F-sport' 'Mondeo' '316 i' 'Century' 'Omega 1'
+ 'Legacy B4 twin turbo' 'Avenger' '740' 'A8' 'Escort' 'Atenza' 'Tiguan'
+ 'Astra BERTONE' 'FIT Hbrid' 'Verso' 'Golf 6' '230' 'Bluebird' '120'
+ 'CLK 230 .' 'Liana' 'C 280' 'Passport' 'ColtPlus' 'A4 S line' 'Camry XLE'
+ 'Sonata hybrid' 'Sierra' 'Liberty' 'Fit Aria' 'ISIS' 'F-type' 'Grandis'
+ 'E 430' 'FIT S' 'Inspire' 'Land Rover Sport' 'Venza' 'Town and Country'
+ 'XV LIMITED' 'Premacy' 'Model X' 'R 350' '135' 'Corolla S' 'Traverse'
+ 'Demio' 'Jetta GLI' 'ML 350 4 MATIC' 'CLK 55 AMG' 'CX-5' 'Taurus' 'YRV'
+ 'Allante' 'C 230' 'Combo 2001' 'S 500' '540 I' '500 Abarth' '650' '24 10'
+ '206' 'A4 premium plius' 'Mazda 6' 'Fred' 'Altezza' 'C 320 CDI' '2106'
+ '550' 'Escape Titanium' 'Continental GT' 'C30 2010' 'Micra' 'X5 XDRIVE'
+ '535 i' 'Estima' 'C 200 7G-TRONIC' 'CX-9' 'Astra g' 'X 250' 'IVECO DAYLY'
+ '640 GRAN-COUPE' 'Camry SPORT' 'Hilux' 'Acadia' 'Cruze Premier' 'UP'
+ 'Outlander SPORT' '500L LONG' 'Ranger' 'XJ' 'XL7' 'Passat sel'
+ 'FIT HIBRID' 'H6' 'Mazda 6 TOURING' 'CLA 45 AMG' 'Durango' 'Caliber'
+ 'Murano' '523' '320 i' 'Sebring' 'Escape 3.0' 'Ramcharger' 'C 36 AMG'
+ 'Transit Fff' 'LX 570' 'Gentra' '316' 'Cinquecento' 'Pilot' '5.30E+62'
+ 'CC 2.0 T' 'BRZ' 'SX4' '1500' 'GLE 63 AMG' 'Grand Cherokee Saiubileo'
+ 'Smart Fortwo' 'Skyline' '500 Sport' 'Golf TDI' 'Camry sport'
+ 'Demio evropuli' 'Land Cruiser' 'X3' 'CLS 550 550' 'Equinox LT'
+ 'Navigator' 'Outlander SE' 'E 270 AVANGARDI' 'Wingroad' 'X5 e53'
+ 'Eunos 500' 'Pacifica' 'Doblo' 'Allroad' 'E 350 212' 'Panamera S'
+ 'Forester SH' 'Outlander Sport' 'Serena Serea' 'E 55' 'Cooper S Cabrio'
+ 'S 63 AMG' 'Transit S' 'C 63 AMG' 'C-MAX HYBRID' '435 CUPE' 'ML 500'
+ 'G 55 AMG' 'ML 270' 'LX 470' 'CLK 200 Kompressor' 'Elysion' 'E 550'
+ 'Caddy' 'Transit 135' 'Samurai' 'M5 Japan' 'Caldina' 'Aqua s'
+ 'Elantra LIMITED' '607' 'RX 350 F sport' 'Astra H' 'NEW Beetle'
+ 'Megane GT Line' 'CLS 350 AMG' 'Q5 S-line' 'X1' 'CLK 270' 'RDX'
+ 'Elantra GT' 'Cruze RS' '2121 (Niva)' '20' 'MKZ hybrid' '130'
+ 'X-Trail X-trail' 'Hilux Surf' 'VehiCross' 'CC' 'Prius C Navigation'
+ 'Vaneo' 'Expedition' 'Sonata HYBRID' 'ML 320' 'Range Rover Evoque'
+ 'Prius V ALPINA' 'Sprinter 315CDI' 'Taurus interceptor' 'RIO lx'
+ 'X5 XDRIVE 35D' 'Jetta SEL' 'Odyssey' 'G 300' 'RX 450 H' 'Agila'
+ 'Highlander sport' 'Avella' 'Focus TITANIUM' 'Forte' 'Accord CL9 type S'
+ '500 turbo' 'TSX' 'Aqua L paketi' 'Santa FE Ultimate' 'Sprinter 311'
+ '320 Gran Turismo' 'E 280 CDI' 'E 36 AMG' 'Outlander sport' 'Astra astra'
+ '311' 'Vito 2.2' 'Touareg' 'F150' '535 Twinturbo' '416' 'Avensis'
+ 'Sonata Hibrid' 'Prius s' 'RIO lX' 'QX80' 'Will Vs' 'Presage RIDER'
+ 'Yaris IA' 'E 300 AVANTGARDE-LTD' 'Escalade' 'H2' '550 GT' 'Impreza'
+ 'X5 X-Drive' 'Getz' '500C' 'R 320' 'MDX' 'KA' 'IS 200' '128 M tech'
+ 'Encore' 'Megane' 'FIT HYBRYD' 'CL 550' 'X3 3.5i' 'E 350 AMG' 'C 220 CDI'
+ 'Elantra gt' '550 F10' 'Focus ST' 'Camry sporti' 'G20' 'Sonic' '545'
+ 'FX35' 'GLS 450' 'X5 4,4i' '320 2.2' 'Megane 19' 'S 320' 'Cruze LS'
+ 'Camry HYBRID' '645 CI' 'CTS' 'Camry LE' 'Fortuner' 'CT 200h F SPORT'
+ 'Maverick' 'Elantra Limited' '225' '525 i' 'GL 320 bluetec' '100'
+ 'Quest 2016' 'RC F' '320 2.0' '328 DIZEL' 'Impreza G4' 'FIT fit' 'RS7'
+ 'Passat SE' 'iA isti' 'Elantra GLS / LIMITED' '320 320' 'Avalon limited'
+ 'Optima X' '3796' 'C 320' 'Touran' 'Omega B' 'Corsa Corsa' 'Vectra C'
+ 'E 220 cdi' 'Countryman s' 'GL 350' 'Demio 12' 'Tucson TURBO'
+ '535 comfort-sport' '500 46 ml' 'Wish' '500 Lounge' 'XC90' 'Ioniq'
+ 'Trailblazer' 'Optima Hybrid' 'G 320' 'Crosstrek' 'CLS 63 AMG'
+ 'R 350 BLUETEC' 'Cruze sonic' 'Nubira' 'TL' 'Axela' 'X5 3.0' 'Scirocco'
+ '745 i' 'A3' 'Mulsanne' '320 I' 'SRX' 'Renegade' 'Caravan' 'GONOW'
+ 'S 350 Longia' 'Fun Cargo' 'Cruze L T' 'C-MAX SEL' '31514' 'Vitara'
+ 'Aqua G klas' '735' 'Cougar' 'Fusion SE' '116' '328 sulev' 'Sorento SX'
+ 'M5' '4Runner' 'Corolla Im' 'Kangoo' 'Aerio SX' 'C 230 2.5'
+ 'Highlander 2.4 lit' 'Camry Le' 'PT Cruiser' 'CERVO' 'Camry Hybrid'
+ 'Kizashi sporti' 'B-MAX' 'Montero Sport' 'X1 28Xdrive' 'Malibu LT'
+ 'X5 restilling' 'Focus Fokusi' 'Fabia' '335 335i' 'RX 400 RESTAILING'
+ 'tC' 'Intrepid' 'EX37' '969 968m' 'CX-5 Touring' 'Edix' 'ML 350 BLUETEC'
+ 'IX35 2.0' '750 4.8' 'Veloster R-spec' 'Vitz RS' 'Azera' '2107 07'
+ 'Transit Custom' '960' 'Elysion 3.0' 'Zafira B' 'Prius 1.5I' 'CLK 430'
+ 'ML 270 CDI' 'Civic Ferio' 'Carisma' 'S60' 'Jetta TDI' 'Optima ECO'
+ 'Patriot' 'Sonata Hybrid' 'Verisa' 'Kicks' 'ATS' 'Mark X' 'Vitara GL+'
+ 'X1 X-Drive' 'Yaris iA' 'Focus Flexfuel' 'Aqua G' 'Swift Sport' 'Leon'
+ '300' 'Duster' 'Q7 sport' 'Transit Connect Prastoi' 'Verisa 2007'
+ 'Camry sport se' 'ML 280' 'GLE 400 A M G' 'Highlander LIMITED'
+ 'Grand Cherokee LAREDO' 'E 270 CDI' 'CLK 230' 'Passat Se' 'X5 3.0i'
+ 'Corolla spacio' 'Camry XV50' '3.25E+48' '911 meqanika' '645' 'F-pace'
+ '24' 'Transit T330' '3.20E+38' 'Combo TDI' 'E 50' 'Aqua HIBRID' 'Celica'
+ 'ML 350 3.7' 'macan' 'Panda' 'Niro' 'X-Trail gt' 'C 400' '535 Diesel'
+ 'RAV 4 SPORT' 'Vectra c' 'Sonata SPORT' 'CR-Z' 'Malibu eco'
+ 'Forester stb' 'FIT Premiym' 'Legacy Bl5' 'HHR' 'Prius TSS LIMITED'
+ 'Cooper r50' 'C8' 'Cr-v Cr-v' 'Elantra Gt' 'Suburban' 'A3 4X4' '100 NX'
+ 'Focus Titanium' 'M3' 'Prius S' 'Vitz i.ll' 'T3' 'RAV 4 XLE' '230 W153'
+ 'Golf 2' 'Omega' 'GLK 300' 'Musa' 'Golf 3' '1500,1600 Schtufenheck' '270'
+ 'Passat sport' 'GLC 300 GLC coupe' 'Feroza' '2140' 'Jetta se' 'Ghibli'
+ 'C-MAX C-MAX' 'X1 4X4' '530 GT' 'G 550' 'Land Cruiser Prado RX' 'GLK 350'
+ '456' '325 i' '190' 'C 300 4matic' '207' 'Focus se' 'i3' '535 I'
+ 'FIT RS MODELI' 'Prius C 2013' 'C4' 'Kicks SR' 'Caliber sxt' 'E-pace'
+ 'X-type' 'Cefiro' 'Mira' 'Tigra' 'A 140 140' '328 DRIFT CAR'
+ 'Forester XT' 'March 231212' 'E 400' 'Cruze Cruze' '328 i' 'Eos'
+ 'Astra td' 'Tucson Limited' '3110' 'GL 350 BLUETEC' 'G 65 AMG G63 AMG'
+ 'Ignis' 'Camaro LS' 'Corolla ECO' 'Catera' 'Cayman' 'Tiida 15 M'
+ 'E 350 4 MATIC' '630' 'H3' 'Golf Gti' 'Dart' 'Elantra Se' 'Demio mazda2'
+ '745' 'Neon' 'A4 B6' 'Astra GE' 'Octavia Scout' 'IS 300'
+ 'Sprinter VIP CLASS' 'A6 UNIVERSAL' 'Mariner' 'Mustang cabrio'
+ '500 sport' 'Jetta SE' 'FIT RS' '500 s' '530 G30' 'Eclipse' 'Move' 'C5'
+ '3.18E+38' 'C 230 kompresor' 'Vanette' 'C-MAX PREMIUM' 'Q5 Prestige'
+ '09-Mar' 'Jetta 2.0' '322173' 'Hiace' 'S 430' 'Discovery LR3' 'Citan'
+ 'ColtPlus Plus' 'Passat RLAINI' 'Alto Lapin' 'Quest' 'Countryman S turbo'
+ 'Silverado' '4Runner LIMITED' 'Prius V HYBRID' 'RAV 4 LIMITED'
+ 'Malibu Hybrid' 'B 220' 'E 320 4matic' 'S 55 5.5' 'GS 300' 'Camry sel'
+ 'GLE 450' 'Elantra 2014' '520 I' 'Belta' 'Escape SE' 'CLK 200 200'
+ 'Transit Tourneo' 'Trax' 'C-MAX SE' 'Demio Sport' 'IS 250 TURBO' '280'
+ 'CX-3' '525 ///M' 'Fred HIBRIDI' 'Forester 4x4' 'Juke Nismo RS' 'E 270 4'
+ 'Phaeton' 'Millenia' 'Lancer GT' '250' 'Prius 9' 'ML 320 cdi'
+ 'A6 QUATTRO' '318 m' 'Urus' 'Continental' 'March Rafeet' 'Armada'
+ 'Juke Nismo' 'Range Rover VOGUE' 'Lantra' 'X3 SDRIVE' 'FIT RS MUGEN'
+ 'C70' 'Forester CrossSport' 'GL 350 BLUTEC' 'XL7 limited' 'GL 450 3.0'
+ 'Outback Limited' 'A4 B5' 'X5 Japan' 'CRX' 'C 250 A.M.G' 'Optima HYBRID'
+ 'XC90 3.2 AWD' 'S 400' 'Rx-8' '535 535' '550 M Packet' '640 M'
+ 'Transit 100LD' 'Crossland X' 'Forester cross sport' 'Chariot'
+ 'Grand HIACE' 'Passat pasat' '401' 'C 250 AMG' 'Gloria' 'Legacy bl5'
+ 'C 180 komp' 'Yaris RS' 'F50' 'CL 500' 'E-pace p200' '240']
+Coluna: Ano, Valores únicos: [2010 2011 2006 2014 2016 2013 2007 1999 1997 2018 2008 2012 2017 2001
+ 1995 2009 2000 2019 2015 2004 1998 1990 2003 1985 2005 1996 2002 1993
+ 1988 1977 1989 1994 2020 1992 1984 1986 1991 1983 1953 1964 1974 1987
+ 1943 1978 1965 1976]
+Coluna: Categoria, Valores únicos: ['suv' 'hatchback' 'sedan' 'microonibus' 'vagao de carga' 'universal'
+ 'cupe' 'minivan' 'conversivel' 'limousine' 'picape']
+Coluna: Couro, Valores únicos: [1 0]
+Coluna: Combustivel, Valores únicos: ['HIBRIDO' 'GASOLINA' 'DIESEL' 'GAS NATURAL' 'GASOL.' 'DIES.']
+Coluna: Volume_motor, Valores únicos: [3.5 3.  1.3 2.5 2.  1.8 2.4 4.  1.6 3.3 2.2 1.5 4.4 1.4 3.6 2.3 4.7 5.5
+ 2.8 3.2 3.8 4.6 1.2 5.  1.7 2.9 0.5 2.7 4.8 5.3 2.1 0.7 1.  2.6 1.9 0.8
+ 5.7 6.7 6.2 3.4 3.7 6.3 4.2 4.3 1.1 5.9 5.4 5.6 6.  0.6 6.8 4.5 7.3 3.1
+ 6.4]
+Coluna: Km, Valores únicos: [ 186005.  124493.  200000. ...   94793.  274563. 1700000.]
+Coluna: Cilindros, Valores únicos: [ 6  4  8  1 12  3  2 16  5  7  9 10 14]
+Coluna: Tipo_cambio, Valores únicos: ['automatico' 'tiptronic' 'variator' 'manual']
+Coluna: Tração, Valores únicos: ['4x4' 'dianteira' 'traseira']
+Coluna: Portas, Valores únicos: [4 2 5]
+Coluna: Cor, Valores únicos: ['Prata' 'Preto' 'Branco' 'Cinza' 'Azul' 'Verde' 'Vermelho' 'Amarelo'
+ 'Marrom' 'Dourado' 'Bege' 'Roxo' 'Laranja' 'Rosa']
+Coluna: Airbags, Valores únicos: [12  8  2  0  4  6 10  3  1 16  5  7  9 11 14 15]
+Coluna: Preco, Valores únicos: [13328. 16621.  8467. ... 47982.  4265. 26999.]
+Coluna: Numero_proprietarios, Valores únicos: [1 5 2 4 3]
+Coluna: Classificacao_Veiculo, Valores únicos: ['usado' 'semi-novo']
+Coluna: Faixa_Preco, Valores únicos: ['economico' 'medio' 'luxo' 'muito luxo']

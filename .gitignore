@@ -1,0 +1,6 @@
+#ignora todos csv
+*.csv
+venv/
+__pycache__/
+*.pyc
+.vscode/

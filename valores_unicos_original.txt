@@ -1,0 +1,80 @@
+Valores únicos por coluna:
+Coluna: ID, Valores únicos: [45654403 44731507 45774419 ... 45793009 45810072 45759865]
+Coluna: Débitos, Valores únicos: [ 1399  1018     0   862   446   891   761   751   394  1053  1055  1079
+   810  2386  1850   531  1249  2455   583  1537  1288   915  1750   707
+  1077  1486  1091   650   382  1436  1194   503  1017  1104   639   629
+   919   781   530   640   777   779   934   769   645  1185  1324   830
+  1187  1111   760   642  1604  1095   966   473  1138  1811   988   765
+   917  1156   687 11714   836  1347  2866  1646   259   609   697   585
+   475   690   308  1823  1361  1273   924   584  2078   831  1172   893
+  1872  1885  1266   447  2148  1730   730   289   502   586   333  1325
+   247   879  1342  1327  1598  1514  1058   738  1935   481  1522  1282
+   456   900   798  1277   442  1051   790  1292  1047   528  1211  1493
+  1793   574   930  1998   271   706  1481  1677  1661  1286  1408  1090
+   595   880  1451  1267   993  1714   878   641   749  1511   603   353
+   877  1236  1141   397   784  1024  1357  1301   770   922  1438   753
+   607  1363   638   490   565   517   833   489  1760   986  1841  1620
+  1360   474  1099   978  1624  1946  1268  1307   696   649   666  2151
+   551   800   971  1323  2377  1845  1083   694   463   419   345  1515
+  1505  2056  1203   729   460  1356   876   911  1190   780   448  2410
+  1848  1148   834  1275  1028  1197   724   890  1705   505   789  2959
+   518   461  1719  2858  3156  2225  2177  1968  1888  1308  2736  1103
+   557  2195   843  1664   723  4508   562   501  2018  1076  1202  3301
+   691  1440  1869  1178   418  1820  1413   488  1304   363  2108   521
+  1659    87   431  1411  1528  3292  7058  1578   627   874  1996  1488
+  5679  1234   400   889  3268   875   949  2265   441   742   425  2476
+  2971   614  1816  1375  1405  2297  1062  1113   420  2469   658  1951
+  2670  2578  1995  1032   994  1011  2421  1296   155   494   426  1086
+   961  2236  1829   764  1834  1054   617  1529  2266   637   626  1832
+  1016  2002  1756   746  1285  2690  1118  5332   980  1807   970  1228
+  1195  1132  1768  1384  1080  1817  1452  1975  1368   702  1974  1781
+  1036   944   663   364  1539  1345  1680  2209   741  1575   695  1317
+  1525   424   997  1473  1552  2819  2188  1668  3057   799  1502  2606
+   552  1694  1759  1110   399  1470  1174  5877  1474  1688   526   686
+  5908  1107  2070  1468  1246   556  1533  1917  1346   732   692   579
+   421   362  3505  1855  2711  1586  3739   681  1708  2278  1701   722
+  1482   928   827   832   527   604   173  1341  3329  1553   859   167
+   916   828  2082  1176  1108   975  1516  2269  1699  2073  1031  1503
+  2364  1030  1442  5666  2715  1437  2067  1426  2908  1279   866  4283
+   279  2658  3015  2004]
+Coluna: Fabricante, Valores únicos: ['LEXUS' 'CHEVROLET' 'HONDA' 'FORD' 'HYUNDAI' 'TOYOTA' 'MERCEDES-BENZ'
+ 'OPEL' 'PORSCHE' 'BMW' 'JEEP' 'VOLKSWAGEN' 'AUDI' 'RENAULT' 'NISSAN'
+ 'SUBARU' 'DAEWOO' 'KIA' 'MITSUBISHI' 'SSANGYONG' 'MAZDA' 'GMC' 'FIAT'
+ 'INFINITI' 'ALFA ROMEO' 'SUZUKI' 'ACURA' 'VAZ' 'GAZ' 'CITROEN'
+ 'LAND ROVER' 'MINI' 'DODGE' 'CHRYSLER' 'JAGUAR' 'ISUZU' 'SKODA' 'LINCOLN'
+ 'DAIHATSU' 'BUICK' 'TESLA' 'CADILLAC' 'PEUGEOT' 'BENTLEY' 'VOLVO' nan
+ 'HAVAL' 'HUMMER' 'SCION' 'UAZ' 'MERCURY' 'ZAZ' 'ROVER' 'SEAT' 'LANCIA'
+ 'MOSKVICH' 'MASERATI' 'FERRARI' 'SAAB' 'LAMBORGHINI']
+Coluna: Modelo, Valores únicos: ['RX 450' 'Equinox' 'FIT' ... 'CL 500' 'E-pace p200' '240']
+Coluna: Ano, Valores únicos: [2010 2011 2006 2014 2016 2013 2007 1999 1997 2018 2008 2012 2017 2001
+ 1995 2009 2000 2019 2015 2004 1998 1990 2003 1985 2005 1996 2002 1993
+ 1992 1988 1977 1989 1994 2020 1984 1986 1991 1983 1953 1964 1974 1987
+ 1943 1978 1965 1976]
+Coluna: Categoria, Valores únicos: ['suv' 'hatchback' 'sedan' 'microonibus' 'vagao de carga' 'universal'
+ 'cupe' 'minivan' 'conversivel' 'limousine' 'picape']
+Coluna: Couro, Valores únicos: ['Sim' 'Nao']
+Coluna: Combustivel, Valores únicos: ['hibrido' 'gasolina' 'diesel' 'gas natural' 'gasol.' 'dies.']
+Coluna: Volume_motor, Valores únicos: [3.5 3.  1.3 2.5 2.  1.8 2.4 4.  1.6 3.3 2.2 4.7 1.5 4.4 1.4 3.6 2.3 5.5
+ 2.8 3.2 3.8 4.6 1.2 5.  1.7 2.9 0.5 2.7 4.8 5.3 nan 1.1 2.1 0.7 1.  3.7
+ 2.6 1.9 0.8 5.7 6.7 6.2 3.4 6.3 4.3 4.2 5.9 5.4 5.6 6.  0.6 6.8 4.5 7.3
+ 3.1 6.4]
+Coluna: Km, Valores únicos: [ 186005.      nan  200000. ...  274563. 1700000.  119484.]
+Coluna: Cilindros, Valores únicos: [ 6  4  8  1 12  3  2 16  5  7  9 10 14]
+Coluna: Tipo_cambio, Valores únicos: ['automatico' 'tiptronic' 'variator' 'manual']
+Coluna: Tração, Valores únicos: ['4x4' 'dianteira' 'traseira']
+Coluna: Portas, Valores únicos: ['4-5' '2-3' '>5']
+Coluna: Rodas, Valores únicos: [23 14 17 15 28 20 21  4 25 26 30  6  2 18  3 13 27  5 19 10 24  9 32 22
+ 29 31 12  7 16 11  1  8]
+Coluna: Cor, Valores únicos: ['prata' 'preto' 'branco' 'cinza' 'azul' 'verde' 'red' 'azul ceu'
+ 'amarelo' 'marrom' 'dourado' 'bege' 'vermelho' 'roxo' 'laranja' 'rosa']
+Coluna: Airbags, Valores únicos: [12  8  2  0  4  6 10  3  1 16  5  7  9 11 14 15]
+Coluna: Preco, Valores únicos: [13328. 16621.  8467. ... 47982.  4265. 26999.]
+Coluna: Numero_proprietarios, Valores únicos: [1 5 2 4 3]
+Coluna: Data_ultima_lavagem, Valores únicos: ['2021-03-14' '2021-08-08' '2020-04-14' ... '2022-01-16' '2021-11-26'
+ '2021-11-29']
+Coluna: Adesivos_personalizados, Valores únicos: ['Sim' nan]
+Coluna: Radio_AM_FM, Valores únicos: ['FM' 'AM' 'AM/FM']
+Coluna: Historico_troca_oleo, Valores únicos: [ 8  4  5  7  9 10  3  2  1  0  6]
+Coluna: Codigo_concessionaria, Valores únicos: [8497 6796 3382 ... 4236 2127 8428]
+Coluna: Classificacao_Veiculo, Valores únicos: ['usado' 'semi-novo']
+Coluna: Faixa_Preco, Valores únicos: ['economico' 'medio' nan 'luxo' 'muito luxo']

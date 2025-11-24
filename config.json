@@ -1,0 +1,4 @@
+{
+    "dataset_path": "../data/train.csv",
+    "save_figures_path": "./figures/"
+}
