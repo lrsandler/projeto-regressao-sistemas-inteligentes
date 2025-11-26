@@ -1,5 +1,4 @@
 Valores únicos por coluna:
-Coluna: ID, Valores únicos: [45654403 44731507 45774419 ... 45793009 45810072 45759865]
 Coluna: Débitos, Valores únicos: [ 1399  1018     0   862   446   891   761   751   394  1053  1055  1079
    810  2386  1850   531  1249  2455   583  1537  1288   915  1750   707
   1077  1486  1091   650   382  1436  1194   503  1017  1104   639   629
@@ -63,18 +62,10 @@ Coluna: Cilindros, Valores únicos: [ 6  4  8  1 12  3  2 16  5  7  9 10 14]
 Coluna: Tipo_cambio, Valores únicos: ['automatico' 'tiptronic' 'variator' 'manual']
 Coluna: Tração, Valores únicos: ['4x4' 'dianteira' 'traseira']
 Coluna: Portas, Valores únicos: ['4-5' '2-3' '>5']
-Coluna: Rodas, Valores únicos: [23 14 17 15 28 20 21  4 25 26 30  6  2 18  3 13 27  5 19 10 24  9 32 22
- 29 31 12  7 16 11  1  8]
 Coluna: Cor, Valores únicos: ['prata' 'preto' 'branco' 'cinza' 'azul' 'verde' 'red' 'azul ceu'
  'amarelo' 'marrom' 'dourado' 'bege' 'vermelho' 'roxo' 'laranja' 'rosa']
 Coluna: Airbags, Valores únicos: [12  8  2  0  4  6 10  3  1 16  5  7  9 11 14 15]
 Coluna: Preco, Valores únicos: [13328. 16621.  8467. ... 47982.  4265. 26999.]
 Coluna: Numero_proprietarios, Valores únicos: [1 5 2 4 3]
-Coluna: Data_ultima_lavagem, Valores únicos: ['2021-03-14' '2021-08-08' '2020-04-14' ... '2022-01-16' '2021-11-26'
- '2021-11-29']
-Coluna: Adesivos_personalizados, Valores únicos: ['Sim' nan]
-Coluna: Radio_AM_FM, Valores únicos: ['FM' 'AM' 'AM/FM']
-Coluna: Historico_troca_oleo, Valores únicos: [ 8  4  5  7  9 10  3  2  1  0  6]
-Coluna: Codigo_concessionaria, Valores únicos: [8497 6796 3382 ... 4236 2127 8428]
 Coluna: Classificacao_Veiculo, Valores únicos: ['usado' 'semi-novo']
 Coluna: Faixa_Preco, Valores únicos: ['economico' 'medio' nan 'luxo' 'muito luxo']
