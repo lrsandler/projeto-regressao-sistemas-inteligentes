@@ -7,14 +7,15 @@ from sklearn.impute import KNNImputer
 from sklearn.preprocessing import StandardScaler
 import unicodedata
 from sklearn.neighbors import NearestNeighbors
-
+from outliers import plot_boxplot, tratar_outliers
 
 with open('config.json', 'r') as f:
     config = json.load(f)
 data_path = config['dataset_path']
 figures_path = config['save_figures_path']  
+boxplot_path = config['boxplot_path']
+os.makedirs(boxplot_path, exist_ok=True)
 os.makedirs(figures_path, exist_ok=True)
-
 
 def padronizar_texto(s):
     if isinstance(s, str):
@@ -28,7 +29,6 @@ def padronizar_texto(s):
         s = re.sub(r'\s+', ' ', s)
         return s
     return s
-
 
 def limpar_km(valor):
     if pd.isna(valor):
@@ -45,7 +45,6 @@ def verificar_nan_por_col(df):
     nan_percentage = (df.isna().sum() / len(df))
     return pd.DataFrame({'quantidade_nan': nan_count,
                         'percentual_nan': nan_percentage.round(2)}).sort_values(by='percentual_nan', ascending=False)
-
 
 def normalizar(df, colunas_numericas):
     scaler = StandardScaler()
@@ -69,7 +68,6 @@ def preencher_nan_com_media_moda(df, colunas_numericas, colunas_categoricas):
     return df 
 
 #lembrar de normalizar antes de preencher com knn
-
 def verificar_densidade_knn(df, colunas_numericas, k=5):
     df_num = df[colunas_numericas].dropna()
 
@@ -85,14 +83,65 @@ def verificar_densidade_knn(df, colunas_numericas, k=5):
 
     print(f"Média das distâncias: {dist.mean():.4f}")
 
-def preencher_nulos_com_knn(df, colunas_numericas, k=5):
+def preencher_nulos_com_knn(df, colunas_numericas, k=5, mostrar_graficos=True):
     #explicar no relatorio pq faz sentido usar para cada atributo numerico
 
-    imputer = KNNImputer(n_neighbors=k, missing_values=np.nan)
     df_numericas = df[colunas_numericas]
-    df_numericas_imputadas = pd.DataFrame(imputer.fit_transform(df_numericas), columns=colunas_numericas, index=df.index)
-    for col in colunas_numericas:
-        df[col] = df_numericas_imputadas[col]
+
+    #Estatísticas antes da imputação
+    stats_antes = df_numericas.describe().T
+
+    imputer = KNNImputer(n_neighbors=k, missing_values=np.nan)
+    df_numericas_imputadas = pd.DataFrame(
+        imputer.fit_transform(df_numericas),
+        columns=colunas_numericas,
+        index=df.index
+    )
+
+    mascara_imputacao = df_numericas.isna()  # True para onde valores foram preenchidos
+    linhas_imputadas = mascara_imputacao.any(axis=1).sum()
+    colunas_imputadas = mascara_imputacao.any()
+
+    # Substituindo os valores
+    df[colunas_numericas] = df_numericas_imputadas
+
+    stats_depois = df[colunas_numericas].describe().T
+    print(f"\nNúmero de linhas imputadas: {linhas_imputadas}")
+
+    print("\n Variação estatística:")
+    relatorio_stats = pd.DataFrame({
+        "Media antes": stats_antes["mean"],
+        "Media depois": stats_depois["mean"],
+        "Std antes": stats_antes["std"],
+        "Std depois": stats_depois["std"]
+    })
+    print(relatorio_stats)
+
+    #verifica distribuição antes e depois
+    if mostrar_graficos:
+        for col in colunas_imputadas[colunas_imputadas].index:
+            plt.figure(figsize=(10, 4))
+            
+            # Antes da imputação
+            plt.subplot(1, 2, 1)
+            plt.hist(df_numericas[col].dropna(), bins=30, alpha=0.7)
+            plt.title(f"{col} - Antes da Imputação")
+            plt.xlabel(col)
+            plt.ylabel("Frequência")
+
+            # Depois da imputação
+            plt.subplot(1, 2, 2)
+            plt.hist(df_numericas_imputadas[col].dropna(), bins=30, alpha=0.7)
+            plt.title(f"{col} - Depois da Imputação (KNN)")
+            plt.xlabel(col)
+            plt.ylabel("Frequência")
+
+            plt.suptitle(f"Distribuição antes vs depois - {col}", fontsize=12)
+
+            plt.tight_layout()
+            plt.show()
+            plt.close() 
+
     return df
 
 def verificar_unicos(df, name="valores_unicos.txt"):
@@ -118,8 +167,7 @@ def plotar_distribuicao_preco(df_limpo):
     plt.close()
 
 def matriz_correlacao(df_limpo_knn):
-    df_correlacao = df_limpo_knn.drop(columns=['Couro'])
-    correlacao_knn = df_correlacao.corr(numeric_only=True)
+    correlacao_knn = df_limpo_knn.corr(numeric_only=True)
 
     plt.figure(figsize=(8, 6))
     sns.heatmap(correlacao_knn, annot=True, fmt=".2f", cmap='coolwarm')
@@ -138,8 +186,8 @@ def main():
     df = df.drop(columns=colunas_ruido)
 
     # tipos de colunas
-    colunas_numericas = ['Débitos', 'Couro', 'Ano', 'Volume_motor', 'Km', 'Cilindros', 'Airbags', 'Numero_proprietarios']
-    colunas_categoricas = ['Categoria', 'Combustivel', 'Tipo_cambio', 'Tração', 'Portas', 'Cor', 'Classificacao_Veiculo', 'Faixa_Preco']
+    colunas_numericas = ['Débitos', 'Ano', 'Volume_motor', 'Km', 'Cilindros', 'Airbags', 'Numero_proprietarios']
+    colunas_categoricas = ['Categoria', 'Couro', 'Combustivel', 'Tipo_cambio', 'Tração', 'Portas', 'Cor', 'Classificacao_Veiculo', 'Faixa_Preco']
 
     for col in colunas_categoricas:
         df[col] = df[col].apply(padronizar_texto)
@@ -162,13 +210,13 @@ def main():
 
     features_df = df.drop(columns=['Preco'])
     nulos_por_linha = features_df.isnull().sum(axis=1)
-    limite_nulos = 4
+    limite_nulos = 3
     df_limpo = df[nulos_por_linha < limite_nulos].copy() 
     print(f"Linhas removidas por excesso de nulos (>={limite_nulos}): {df.shape[0] - df_limpo.shape[0]}")
 
     #retira dados com Preco igual a 0
     condicao = df_limpo['Preco'].notna() & (df_limpo['Preco'] > 0)
-    df_sempreco = df_limpo.loc[~condicao]
+    #df_sempreco = df_limpo.loc[~condicao]
     df_limpo = df_limpo.loc[condicao]
 
     #padroniza combustivel e cor
@@ -182,7 +230,7 @@ def main():
     df_limpo['Cor'] = df_limpo['Cor'].str.capitalize()
 
     # couro para binário
-    df_limpo['Couro'] = df_limpo['Couro'].map({'Sim': 1, 'Nao': 0})
+    #df_limpo['Couro'] = df_limpo['Couro'].map({'Sim': 1, 'Nao': 0})
 
     #verificar nan 
     resultado_nan = verificar_nan_por_col(df)
@@ -190,32 +238,46 @@ def main():
     resultado_nan_ = verificar_nan_por_col(df_limpo)
     print(f"Nulos no dataset limpo:\n {resultado_nan_}\n")
 
-    df_limpo_norm, scaler = normalizar(df_limpo, colunas_numericas)
+    #plota boxplots iniciais
+    for col in colunas_numericas:
+        plot_boxplot(df_limpo, col, f"{col}_ANTES_TRATAMENTO", boxplot_path)
 
     df_limpo_media = preencher_nan_com_media_moda(df_limpo, colunas_numericas, colunas_categoricas)
-    
+
+    #normalizar antes de knn
+    df_limpo_norm, scaler = normalizar(df_limpo_media, colunas_numericas)
     #verfica a densidade antes de preencher com knn
     verificar_densidade_knn(df_limpo_norm, colunas_numericas, k=5)
-    df_limpo_knn = preencher_nulos_com_knn(df_limpo_norm, colunas_numericas, k=5)
+
+    df_limpo_knn = preencher_nulos_com_knn(df_limpo_norm, colunas_numericas, k=5, mostrar_graficos=True)
+    
+    #inverter a normalização depois de inputar
+    df_limpo_knn[colunas_numericas] = scaler.inverse_transform(df_limpo_knn[colunas_numericas])
+
+    # manter colunas categóricas preenchidas com moda  
+    df_limpo_knn[colunas_categoricas] = df_limpo_media[colunas_categoricas]
+
+    #tratar outliers com iqr
+    colunas_tratamento_iqr = ['Km', 'Preco']
+    df_limpo_knn_iqr = tratar_outliers(df_limpo_knn, colunas_tratamento_iqr, boxplot_path)
+    df_limpo_media_iqr = tratar_outliers(df_limpo_media, colunas_tratamento_iqr, boxplot_path)
+
 
     print("tamanho do dataset original:", df.shape)
     print("tamanho do dataset limpo:", df_limpo.shape)
-    print("tamanho do dataset sem preco:", df_sempreco.shape)
+    print("tamanho do dataset limpo media:", df_limpo_media_iqr.shape)
+    print("tamanho do dataset limpo knn:", df_limpo_knn_iqr.shape)
 
     df_limpo_media.to_csv("dados_limpos_media.csv", index=False)
-    df_limpo_knn.to_csv("dados_limpos_knn.csv", index=False)
-    df_sempreco.to_csv("dados_sem_preco.csv", index=False)
+    df_limpo_knn_iqr.to_csv("dados_limpos_knn.csv", index=False)
 
-    # manter colunas categóricas preenchidas com moda 
-    #alterar depois para arvore de decisao? testar variaveis categoricas e numericas com arvore 
-    df_limpo_knn[colunas_categoricas] = df_limpo_media[colunas_categoricas]
     verificar_unicos(df, name="valores_unicos_original.txt")
     verificar_unicos(df_limpo, name="valores_unicos.txt") 
-    verificar_unicos(df_limpo_media, name="valores_unicos_media.txt")
-    verificar_unicos(df_limpo_knn, name="valores_unicos_knn.txt")
+    verificar_unicos(df_limpo_media_iqr, name="valores_unicos_media.txt")
+    verificar_unicos(df_limpo_knn_iqr, name="valores_unicos_knn.txt")
 
-    plotar_distribuicao_preco(df_limpo)
-    matriz_correlacao(df_limpo_knn)
+    #plotar_distribuicao_preco(df_limpo)
+    #matriz_correlacao(df_limpo_knn)
 
 if __name__ == "__main__":
     main()

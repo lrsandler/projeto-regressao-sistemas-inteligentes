@@ -51,7 +51,7 @@ Coluna: Ano, Valores únicos: [2010 2011 2006 2014 2016 2013 2007 1999 1997 2018
  1943 1978 1965 1976]
 Coluna: Categoria, Valores únicos: ['suv' 'hatchback' 'sedan' 'microonibus' 'vagao de carga' 'universal'
  'cupe' 'minivan' 'conversivel' 'limousine' 'picape']
-Coluna: Couro, Valores únicos: ['Sim' 'Nao']
+Coluna: Couro, Valores únicos: ['sim' 'nao']
 Coluna: Combustivel, Valores únicos: ['hibrido' 'gasolina' 'diesel' 'gas natural' 'gasol.' 'dies.']
 Coluna: Volume_motor, Valores únicos: [3.5 3.  1.3 2.5 2.  1.8 2.4 4.  1.6 3.3 2.2 4.7 1.5 4.4 1.4 3.6 2.3 5.5
  2.8 3.2 3.8 4.6 1.2 5.  1.7 2.9 0.5 2.7 4.8 5.3 nan 1.1 2.1 0.7 1.  3.7

@@ -1,4 +1,5 @@
 {
     "dataset_path": "../data/train.csv",
-    "save_figures_path": "./figures/"
+    "save_figures_path": "./figures/",
+    "boxplot_path": "./figures/boxplots/"
 }
