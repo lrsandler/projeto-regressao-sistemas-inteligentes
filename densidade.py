@@ -88,7 +88,6 @@ print("Top outliers knn:\n", top_outliers[['Ano', 'Km', 'Preco', 'score_if']])
 top_outliers_media = df_media.sort_values(by="score_if", ascending=False).head(10).copy()
 print("Top outliers media:\n", top_outliers_media[['Ano', 'Km', 'Preco', 'score_if']])
 
-
 #lim score de anomaia
 limite_score = 0.65
 anomalias_knn = df_knn[df_knn["score_if"] > limite_score].copy()
