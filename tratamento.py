@@ -83,17 +83,14 @@ def verificar_densidade_knn(df, colunas_numericas, k=5):
 
     print(f"Média das distâncias: {dist.mean():.4f}")
 
-def preencher_nulos_com_knn(df, colunas_numericas, k=5, mostrar_graficos=True):
-    #explicar no relatorio pq faz sentido usar para cada atributo numerico
-
+def preencher_nulos_com_knn(df, colunas_numericas, k=5):
     df_numericas = df[colunas_numericas]
-
     #Estatísticas antes da imputação
     stats_antes = df_numericas.describe().T
 
-    imputer = KNNImputer(n_neighbors=k, missing_values=np.nan)
-    df_numericas_imputadas = pd.DataFrame(
-        imputer.fit_transform(df_numericas),
+    imputer = KNNImputer(n_neighbors=k)
+    df_imputado = pd.DataFrame(
+        imputer.fit_transform(df[colunas_numericas]),
         columns=colunas_numericas,
         index=df.index
     )
@@ -103,7 +100,7 @@ def preencher_nulos_com_knn(df, colunas_numericas, k=5, mostrar_graficos=True):
     colunas_imputadas = mascara_imputacao.any()
 
     # Substituindo os valores
-    df[colunas_numericas] = df_numericas_imputadas
+    df[colunas_numericas] = df_imputado
 
     stats_depois = df[colunas_numericas].describe().T
     print(f"\nNúmero de linhas imputadas: {linhas_imputadas}")
@@ -116,32 +113,6 @@ def preencher_nulos_com_knn(df, colunas_numericas, k=5, mostrar_graficos=True):
         "Std depois": stats_depois["std"]
     })
     print(relatorio_stats)
-
-    #verifica distribuição antes e depois
-    if mostrar_graficos:
-        for col in colunas_imputadas[colunas_imputadas].index:
-            plt.figure(figsize=(10, 4))
-            
-            # Antes da imputação
-            plt.subplot(1, 2, 1)
-            plt.hist(df_numericas[col].dropna(), bins=30, alpha=0.7)
-            plt.title(f"{col} - Antes da Imputação")
-            plt.xlabel(col)
-            plt.ylabel("Frequência")
-
-            # Depois da imputação
-            plt.subplot(1, 2, 2)
-            plt.hist(df_numericas_imputadas[col].dropna(), bins=30, alpha=0.7)
-            plt.title(f"{col} - Depois da Imputação (KNN)")
-            plt.xlabel(col)
-            plt.ylabel("Frequência")
-
-            plt.suptitle(f"Distribuição antes vs depois - {col}", fontsize=12)
-
-            plt.tight_layout()
-            plt.show()
-            plt.close() 
-
     return df
 
 def verificar_unicos(df, name="valores_unicos.txt"):
@@ -271,14 +242,16 @@ def main():
     for col in colunas_numericas:
         plot_boxplot(df_limpo, col, f"{col}_ANTES_TRATAMENTO", boxplot_path)
 
+    df_knn = df_limpo.copy()
+
     df_limpo_media = preencher_nan_com_media_moda(df_limpo, colunas_numericas, colunas_categoricas)
 
     #normalizar antes de knn
-    df_limpo_norm, scaler = normalizar(df_limpo_media, colunas_numericas)
+    df_limpo_norm, scaler = normalizar(df_knn, colunas_numericas)
     #verfica a densidade antes de preencher com knn
     verificar_densidade_knn(df_limpo_norm, colunas_numericas, k=5)
 
-    df_limpo_knn = preencher_nulos_com_knn(df_limpo_norm, colunas_numericas, k=5, mostrar_graficos=True)
+    df_limpo_knn = preencher_nulos_com_knn(df_limpo_norm, colunas_numericas, k=5)
     
     #inverter a normalização depois de inputar
     df_limpo_knn[colunas_numericas] = scaler.inverse_transform(df_limpo_knn[colunas_numericas])
@@ -308,8 +281,8 @@ def main():
     categorica = "Faixa_Preco"
 
     # Aplicando log-transform em Km e Preco para melhor visualização
-    plot_pairplot(df_limpo_knn_iqr, colunas_num, hue_col=categorica, 
-                  log_transform=None, save_path="figures/pairplot.png")
+    #plot_pairplot(df_limpo_knn_iqr, colunas_num, hue_col=categorica, 
+    #              log_transform=None, save_path="figures/pairplot.png")
     #plotar_distribuicao_preco(df_limpo)
     #matriz_correlacao(df_limpo_knn)
 
