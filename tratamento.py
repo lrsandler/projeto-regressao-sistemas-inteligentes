@@ -167,15 +167,48 @@ def plotar_distribuicao_preco(df_limpo):
     plt.close()
 
 def matriz_correlacao(df_limpo_knn):
-    correlacao_knn = df_limpo_knn.corr(numeric_only=True)
+    #retirar variaveis discretas 
+    df_pearson = df_limpo_knn.drop(columns=['Portas', 'Airbags', 'Numero_proprietarios', 'Cilindros'])
+    correlacao_spearman = df_limpo_knn.corr(method = 'spearman', numeric_only=True)
+    correlacao_pearson = df_pearson.corr(method = 'pearson', numeric_only=True)
 
     plt.figure(figsize=(8, 6))
-    sns.heatmap(correlacao_knn, annot=True, fmt=".2f", cmap='coolwarm')
-    plt.title('Matriz de Correlação')
+    sns.heatmap(correlacao_spearman, annot=True, fmt=".2f", cmap='coolwarm')
+    plt.title('Matriz de Correlação de Spearman')
     plt.tight_layout()
-    plt.savefig(os.path.join(figures_path,"matriz_correlacao.png"))
+    plt.savefig(os.path.join(figures_path,"matriz_correlacao_spearman.png"))
     plt.show()
     plt.close()
+    
+    plt.figure(figsize=(8, 6))
+    sns.heatmap(correlacao_pearson, annot=True, fmt=".2f", cmap='coolwarm')
+    plt.title('Matriz de Correlação de Pearson')
+    plt.tight_layout()
+    plt.savefig(os.path.join(figures_path,"matriz_correlacao_pearson.png"))
+    plt.show()
+    plt.close()
+
+
+def plot_pairplot(df, colunas_numericas, hue_col=None, log_transform=None, save_path=None):
+    
+    df_plot = df[colunas_numericas + ([hue_col] if hue_col else [])].copy()
+    
+    # Aplicar log-transform, se especificado
+    if log_transform:
+        for col in log_transform:
+            if col in df_plot.columns:
+                df_plot[col] = df_plot[col].apply(lambda x: np.log1p(x))  # log1p para evitar log(0)
+    
+    # Criar pairplot
+    sns.set_theme(style="ticks")
+    pairplot_fig = sns.pairplot(df_plot, hue=hue_col, diag_kind='kde', corner=False)
+        
+    if save_path:
+        os.makedirs(os.path.dirname(save_path), exist_ok=True)
+        pairplot_fig.savefig(save_path, bbox_inches='tight')
+    
+    plt.show()
+
 
 def main():
 
@@ -207,7 +240,6 @@ def main():
     df['Volume_motor'] = pd.to_numeric(df['Volume_motor'], errors='coerce')
     df.loc[df['Volume_motor'] < 0.5, 'Volume_motor'] = np.nan
 
-
     features_df = df.drop(columns=['Preco'])
     nulos_por_linha = features_df.isnull().sum(axis=1)
     limite_nulos = 3
@@ -228,9 +260,6 @@ def main():
     df_limpo['Cor'] = df_limpo['Cor'].replace({'red': 'vermelho'})
     df_limpo['Cor'] = df_limpo['Cor'].replace({'azul ceu': 'azul'})
     df_limpo['Cor'] = df_limpo['Cor'].str.capitalize()
-
-    # couro para binário
-    #df_limpo['Couro'] = df_limpo['Couro'].map({'Sim': 1, 'Nao': 0})
 
     #verificar nan 
     resultado_nan = verificar_nan_por_col(df)
@@ -262,7 +291,6 @@ def main():
     df_limpo_knn_iqr = tratar_outliers(df_limpo_knn, colunas_tratamento_iqr, boxplot_path)
     df_limpo_media_iqr = tratar_outliers(df_limpo_media, colunas_tratamento_iqr, boxplot_path)
 
-
     print("tamanho do dataset original:", df.shape)
     print("tamanho do dataset limpo:", df_limpo.shape)
     print("tamanho do dataset limpo media:", df_limpo_media_iqr.shape)
@@ -276,6 +304,12 @@ def main():
     verificar_unicos(df_limpo_media_iqr, name="valores_unicos_media.txt")
     verificar_unicos(df_limpo_knn_iqr, name="valores_unicos_knn.txt")
 
+    colunas_num = ["Ano", "Km", "Débitos", "Preco"]
+    categorica = "Faixa_Preco"
+
+    # Aplicando log-transform em Km e Preco para melhor visualização
+    plot_pairplot(df_limpo_knn_iqr, colunas_num, hue_col=categorica, 
+                  log_transform=None, save_path="figures/pairplot.png")
     #plotar_distribuicao_preco(df_limpo)
     #matriz_correlacao(df_limpo_knn)
 
