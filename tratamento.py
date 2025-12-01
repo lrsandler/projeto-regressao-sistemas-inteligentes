@@ -168,9 +168,8 @@ def plot_pairplot(df, colunas_numericas, hue_col=None, log_transform=None, save_
     if log_transform:
         for col in log_transform:
             if col in df_plot.columns:
-                df_plot[col] = df_plot[col].apply(lambda x: np.log1p(x))  # log1p para evitar log(0)
+                df_plot[col] = df_plot[col].apply(lambda x: np.log1p(x))  
     
-    # Criar pairplot
     sns.set_theme(style="ticks")
     pairplot_fig = sns.pairplot(df_plot, hue=hue_col, diag_kind='kde', corner=False)
         
@@ -269,7 +268,7 @@ def main():
     print("tamanho do dataset limpo media:", df_limpo_media_iqr.shape)
     print("tamanho do dataset limpo knn:", df_limpo_knn_iqr.shape)
 
-    df_limpo_media.to_csv("dados_limpos_media.csv", index=False)
+    df_limpo_media_iqr.to_csv("dados_limpos_media.csv", index=False)
     df_limpo_knn_iqr.to_csv("dados_limpos_knn.csv", index=False)
 
     verificar_unicos(df, name="valores_unicos_original.txt")
