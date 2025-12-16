@@ -132,7 +132,7 @@ The regression module creates a comprehensive dashboard for model comparison:
 Bar chart comparing Root Mean Squared Error across all models.
 
 **Output:**
-- **File:** `./resultados_{dataset}/comparacao_rmse.png`
+- **File:** `./resultados_{dataset}/comparacao_rmse.png` (where `{dataset}` is either 'knn' or 'media' based on the imputation strategy used)
 - **Models Compared:**
   - Linear Regression
   - KNN Regressor
@@ -147,7 +147,7 @@ Bar chart comparing Root Mean Squared Error across all models.
 Bar chart comparing R² scores to show model fit quality.
 
 **Output:**
-- **File:** `./resultados_{dataset}/comparacao_r2.png`
+- **File:** `./resultados_{dataset}/comparacao_r2.png` (where `{dataset}` is either 'knn' or 'media' based on the imputation strategy used)
 
 **Use Case:** Determine which model explains the most variance in the target variable
 
@@ -156,7 +156,7 @@ Bar chart comparing R² scores to show model fit quality.
 
 Scatter plots comparing predicted prices against actual prices.
 
-**Outputs:** One plot per model
+**Outputs:** One plot per model (where `{dataset}` is either 'knn' or 'media')
 - `./resultados_{dataset}/predito_vs_real_LinearRegression.png`
 - `./resultados_{dataset}/predito_vs_real_KNN.png`
 - `./resultados_{dataset}/predito_vs_real_RandomForest.png`
@@ -171,7 +171,7 @@ Scatter plots comparing predicted prices against actual prices.
 
 #### 3.4 Model Performance Report
 **Output:**
-- **File:** `./resultados_{dataset}/resultados_grid_search.csv`
+- **File:** `./resultados_{dataset}/resultados_grid_search.csv` (where `{dataset}` is either 'knn' or 'media')
 - **Console:** Formatted table display
 
 **Content:**
@@ -271,6 +271,8 @@ python regressão.py
 - R² comparison bar chart
 - Predicted vs. actual scatter plots (4 models)
 - Performance metrics CSV
+
+**Note:** The first parameter to `treinar_modelos()` ('knn' or 'media') determines the output directory name (`resultados_knn/` or `resultados_media/`) where all visualizations and models will be saved. This allows you to compare results from both imputation strategies side by side.
 
 ## Key Features
 
