@@ -4,6 +4,15 @@
 
 This project implements a comprehensive visualization and analysis dashboard for vehicle price regression analysis. The dashboard functionality is distributed across multiple Python modules, each providing specialized visualization and reporting capabilities for different stages of the data analysis pipeline.
 
+## Quick Reference
+
+| Module | Key Visualizations | Output Location |
+|--------|-------------------|-----------------|
+| `tratamento.py` | Price distribution, correlation matrices, boxplots | `./figures/` |
+| `outliers.py` | Boxplots (before/after outlier treatment) | `./figures/boxplots/` |
+| `isolation_forest.py` | 3D outlier plots, anomaly score curves | Interactive display |
+| `regressão.py` | Model comparisons, prediction plots | `./resultados_knn/` or `./resultados_media/` |
+
 ## Dashboard Components
 
 ### 1. Data Treatment Dashboard (`tratamento.py`)
@@ -394,6 +403,39 @@ Edit `config.json` to change where visualizations are saved:
 
 ### Issue: Memory issues with large datasets
 **Solution:** Process data in chunks or use `plt.close()` after each plot to free memory.
+
+## Interpreting Dashboard Results
+
+### How to Read Correlation Matrices
+- **Values close to +1**: Strong positive correlation (both variables increase together)
+- **Values close to -1**: Strong negative correlation (one increases as the other decreases)
+- **Values close to 0**: Little to no linear relationship
+- **Key insight**: Look for features strongly correlated with Price to identify important predictors
+
+### How to Read Boxplots
+- **Box**: Contains 50% of the data (25th to 75th percentile)
+- **Line in box**: Median value
+- **Whiskers**: Extend to 1.5 × IQR (Interquartile Range)
+- **Points beyond whiskers**: Outliers
+- **Compare before/after**: Verify outlier treatment effectiveness
+
+### How to Read Predicted vs. Actual Plots
+- **Points on diagonal line**: Perfect predictions
+- **Points above line**: Model over-predicts
+- **Points below line**: Model under-predicts
+- **Spread pattern**: Shows if errors are consistent or vary with price range
+- **Best model**: Tightest clustering around diagonal line
+
+### How to Read Model Comparison Charts
+- **RMSE**: Lower is better (measures average prediction error)
+- **R² Score**: Higher is better (0-1 scale, 1 = perfect fit)
+- **Compare bars**: Choose model with lowest RMSE and highest R²
+
+### How to Read 3D Outlier Plots
+- **Red/Hot colors**: Identified outliers
+- **Blue/Cool colors**: Normal data points
+- **Clustering**: Normal points should cluster together
+- **Isolated points**: Potential anomalies worth investigating
 
 ## Future Enhancements
 
