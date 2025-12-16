@@ -253,6 +253,14 @@ python tratamento.py
 - KNN density histogram
 - Unique values report (valores_unicos*.txt)
 
+**Note:** By default, some visualization functions are commented out in `tratamento.py` (lines 283-286). To enable additional visualizations (price distribution, correlation matrices, pair plots), uncomment these lines:
+```python
+plot_pairplot(df_limpo_knn_iqr, colunas_num, hue_col=categorica, 
+              log_transform=None, save_path="figures/pairplot.png")
+plotar_distribuicao_preco(df_limpo)
+matriz_correlacao(df_limpo_knn)
+```
+
 ### Step 2: Anomaly Detection Dashboard
 
 ```python
@@ -268,10 +276,7 @@ python isolation_forest.py
 ### Step 3: Model Performance Dashboard
 
 ```python
-# Uncomment the training lines in regressão.py
-# treinar_modelos("knn", df_knn, colunas_numericas, colunas_categoricas, TARGET)
-# treinar_modelos("media", df_media, colunas_numericas, colunas_categoricas, TARGET)
-
+# Run the regression module
 python regressão.py
 ```
 
@@ -281,7 +286,12 @@ python regressão.py
 - Predicted vs. actual scatter plots (4 models)
 - Performance metrics CSV
 
-**Note:** The first parameter to `treinar_modelos()` ('knn' or 'media') determines the output directory name (`resultados_knn/` or `resultados_media/`) where all visualizations and models will be saved. This allows you to compare results from both imputation strategies side by side.
+**Note:** By default, the model training calls are commented out (lines 170-171 in `regressão.py`). To train models and generate visualizations, uncomment these lines:
+```python
+treinar_modelos("knn", df_knn, colunas_numericas, colunas_categoricas, TARGET)
+treinar_modelos("media", df_media, colunas_numericas, colunas_categoricas, TARGET)
+```
+The first parameter ('knn' or 'media') determines the output directory name (`resultados_knn/` or `resultados_media/`) where all visualizations and models will be saved. This allows you to compare results from both imputation strategies side by side.
 
 ## Key Features
 

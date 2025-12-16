@@ -66,7 +66,9 @@ python tratamento.py
 **Saídas:**
 - `dados_limpos_knn.csv` - Dados limpos com imputação KNN
 - `dados_limpos_media.csv` - Dados limpos com imputação por média/moda
-- Boxplots e visualizações em `./figures/`
+- Boxplots em `./figures/boxplots/`
+
+**Nota:** Para gerar visualizações adicionais (distribuição de preços, matrizes de correlação, pair plots), descomente as linhas 283-286 no arquivo `tratamento.py` antes de executar.
 
 ### 2. Detecção de Anomalias
 
